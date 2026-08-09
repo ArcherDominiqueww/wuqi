@@ -6,13 +6,16 @@
   <title>Your Name | Linguistics</title>
   
   
+  <!-- Load Lato (Regular 400 & Bold 700) from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Minimal Clean CSS Styling -->
   <style>
     :root {
-      /* Headings: Optima primary, Marcellus Google Font fallback */
-      --font-heading: Optima, "Marcellus", "Segoe UI", Candara, sans-serif;
-      
-      /* Body Text: Clean, crisp system sans-serif stack */
-      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      /* Single font stack: Lato for everything */
+      --font-main: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 
       --color-bg: #ffffff;
@@ -22,7 +25,8 @@
     }
 
     body {
-      font-family: var(--font-body);
+      font-family: var(--font-main);
+      font-weight: 400; /* Regular weight for body prose */
       color: var(--color-text);
       background-color: var(--color-bg);
       line-height: 1.6;
@@ -32,23 +36,25 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Apply Optima / Marcellus strictly to headings */
+    /* Headings use Lato Bold (700) */
     h1, h2, h3 {
-      font-family: var(--font-heading);
-      font-weight: normal; /* Marcellus & Optima look best at normal weight */
-      letter-spacing: 0.02em;
+      font-family: var(--font-main);
+      font-weight: 700;
+      color: #111111;
     }
 
     h1 { 
       font-size: 2.2rem; 
       margin-bottom: 0.2rem; 
+      letter-spacing: -0.01em;
     }
     
     h2 { 
-      font-size: 1.35rem; 
+      font-size: 1.3rem; 
       margin-top: 2.5rem; 
       border-bottom: 1px solid #eee; 
       padding-bottom: 0.3rem; 
+      letter-spacing: 0.01em;
     }
 
     p { margin: 1em 0; }
@@ -61,10 +67,10 @@
     ul { padding-left: 1.2rem; }
     li { margin-bottom: 0.8rem; }
     
-    .pub-title { font-weight: 600; }
+    .pub-title { font-weight: 700; }
     .pub-meta { color: var(--color-subtle); font-size: 0.9rem; }
     
-    /* Keep phonetic IPA symbols in serif so special characters render reliably */
+    /* Keep phonetic IPA symbols in a serif font so special characters render reliably */
     .ipa { font-family: var(--font-serif); }
   </style>
 
@@ -72,11 +78,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-
-  <!-- Load Marcellus from Google Fonts for Headings -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 
 </head>
 <body>
