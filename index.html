@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name | Linguistics</title>
   
-  <!-- Minimal Clean CSS Styling -->
+  
   <style>
     :root {
-      /* Optima primary font stack with clean web-safe fallbacks */
-      --font-main: Optima, "Segoe UI", Candara, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+      /* Headings: Optima primary, Marcellus Google Font fallback */
+      --font-heading: Optima, "Marcellus", "Segoe UI", Candara, sans-serif;
+      
+      /* Body Text: Clean, crisp system sans-serif stack */
+      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
       --color-bg: #ffffff;
       --color-text: #222222;
       --color-link: #0055aaa0;
@@ -18,30 +22,33 @@
     }
 
     body {
-      font-family: var(--font-main);
+      font-family: var(--font-body);
       color: var(--color-text);
       background-color: var(--color-bg);
       line-height: 1.6;
       max-width: 720px;
       margin: 0 auto;
       padding: 40px 20px;
-      -webkit-font-smoothing: antialiased; /* Crisp font rendering on Mac/iOS */
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Apply Optima / Marcellus strictly to headings */
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      font-weight: normal; /* Marcellus & Optima look best at normal weight */
+      letter-spacing: 0.02em;
     }
 
     h1 { 
       font-size: 2.2rem; 
       margin-bottom: 0.2rem; 
-      font-weight: 600; 
-      letter-spacing: -0.01em;
     }
     
     h2 { 
-      font-size: 1.3rem; 
+      font-size: 1.35rem; 
       margin-top: 2.5rem; 
       border-bottom: 1px solid #eee; 
       padding-bottom: 0.3rem; 
-      font-weight: 600;
-      letter-spacing: 0.02em;
     }
 
     p { margin: 1em 0; }
@@ -57,7 +64,7 @@
     .pub-title { font-weight: 600; }
     .pub-meta { color: var(--color-subtle); font-size: 0.9rem; }
     
-    /* Keep phonetic IPA symbols in a serif font so special characters render reliably */
+    /* Keep phonetic IPA symbols in serif so special characters render reliably */
     .ipa { font-family: var(--font-serif); }
   </style>
 
@@ -65,6 +72,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <!-- Load Marcellus from Google Fonts for Headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
