@@ -8,7 +8,8 @@
   <!-- Minimal Clean CSS Styling -->
   <style>
     :root {
-      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      /* Optima primary font stack with clean web-safe fallbacks */
+      --font-main: Optima, "Segoe UI", Candara, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
       --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
       --color-bg: #ffffff;
       --color-text: #222222;
@@ -24,10 +25,24 @@
       max-width: 720px;
       margin: 0 auto;
       padding: 40px 20px;
+      -webkit-font-smoothing: antialiased; /* Crisp font rendering on Mac/iOS */
     }
 
-    h1 { font-size: 2.2rem; margin-bottom: 0.2rem; font-weight: 600; }
-    h2 { font-size: 1.3rem; margin-top: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+    h1 { 
+      font-size: 2.2rem; 
+      margin-bottom: 0.2rem; 
+      font-weight: 600; 
+      letter-spacing: -0.01em;
+    }
+    
+    h2 { 
+      font-size: 1.3rem; 
+      margin-top: 2.5rem; 
+      border-bottom: 1px solid #eee; 
+      padding-bottom: 0.3rem; 
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
 
     p { margin: 1em 0; }
     a { color: var(--color-link); text-decoration: none; }
@@ -41,6 +56,8 @@
     
     .pub-title { font-weight: 600; }
     .pub-meta { color: var(--color-subtle); font-size: 0.9rem; }
+    
+    /* Keep phonetic IPA symbols in a serif font so special characters render reliably */
     .ipa { font-family: var(--font-serif); }
   </style>
 
