@@ -13,7 +13,6 @@
   <!-- Minimal Clean CSS Styling -->
   <style>
     :root {
-      /* Single font stack: Lato for everything */
       --font-main: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 
@@ -26,10 +25,10 @@
       --color-border: #e1e4e8;         /* Subtle crisp divider lines */
 
       /* Ultra-Subtle Yellow / Amber Palette */
-      --yellow-subtle-bg: #fef9c3;     /* Very soft highlighter yellow tint */
-      --yellow-subtle-border: #fde047; /* Faint yellow border for badges */
+      --yellow-subtle-bg: #fef9c3;     /* Soft highlighter yellow tint */
+      --yellow-subtle-border: #fde047; /* Faint yellow border */
       --yellow-line: #f59e0b;          /* Warm amber accent line */
-      --yellow-text-muted: #78350f;    /* Muted dark amber text for tags */
+      --yellow-text-muted: #78350f;    /* Muted dark amber text */
     }
 
     body {
@@ -57,17 +56,16 @@
       letter-spacing: -0.02em;
     }
     
-    /* Clean Section Heading with subtle yellow bottom border */
+    /* Section Headings with yellow accent line */
     h2 { 
       font-size: 1.35rem; 
-      margin-top: 1rem; 
+      margin-top: 2rem; 
       border-bottom: 2px solid var(--color-border); 
       padding-bottom: 0.3rem; 
       letter-spacing: -0.01em;
       position: relative;
     }
 
-    /* Soft yellow line running along the bottom border */
     h2::after {
       content: "";
       position: absolute;
@@ -80,7 +78,7 @@
 
     p { margin: 1em 0; }
     
-    /* Soft Highlighter Link Effect */
+    /* Link Hover Effect */
     a { 
       color: var(--color-link); 
       text-decoration: none; 
@@ -94,13 +92,12 @@
       color: var(--color-heading);
     }
 
-    .subtitle { color: var(--color-subtle); font-size: 1.1rem; margin-top: 0; }
     .contact-info { margin-bottom: 2rem; font-size: 0.95rem; color: var(--color-subtle); }
 
-    /* Tab Navigation Bar */
+    /* Tab Navigation */
     .tab-nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.75rem;
       border-bottom: 2px solid var(--color-border);
       margin-bottom: 2rem;
       padding-bottom: 0.2rem;
@@ -111,7 +108,7 @@
       background: none;
       border: none;
       font-family: var(--font-main);
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--color-subtle);
       cursor: pointer;
@@ -124,7 +121,6 @@
       color: var(--color-heading);
     }
 
-    /* Active Tab with Soft Yellow Highlight Line */
     .tab-btn.active {
       color: var(--color-heading);
     }
@@ -148,34 +144,19 @@
     .tab-content.active {
       display: block;
     }
-
-    /* Low-key Yellow Pill Tag */
-    .tag-yellow {
-      background-color: var(--yellow-subtle-bg);
-      color: var(--yellow-text-muted);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 3px;
-      border: 1px solid var(--yellow-subtle-border);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      display: inline-block;
-      margin-right: 6px;
-      vertical-align: middle;
-    }
     
     ul { padding-left: 1.2rem; }
-    li { margin-bottom: 1rem; }
+    li { margin-bottom: 0.8rem; }
     
     .pub-title { font-weight: 700; }
     .pub-meta { color: var(--color-subtle); font-size: 0.9rem; }
+    .placeholder-text { color: var(--color-subtle); font-style: italic; }
     
-    /* Keep phonetic IPA symbols in a serif font so special characters render reliably */
+    /* Phonetic IPA formatting */
     .ipa { font-family: var(--font-serif); }
   </style>
 
-  <!-- KaTeX for LaTeX rendering (Optional) -->
+  <!-- KaTeX for LaTeX rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
@@ -191,17 +172,16 @@
     </div>
   </header>
 
-  <!-- Tab Navigation -->
+  <!-- Three-Tab Navigation -->
   <nav class="tab-nav" aria-label="Main Navigation">
-    <button class="tab-btn active" onclick="openTab(event, 'about')">About</button>
-    <button class="tab-btn" onclick="openTab(event, 'presentations')">Talks & Posters</button>
-    <button class="tab-btn" onclick="openTab(event, 'publications')">Publications</button>
-    <button class="tab-btn" onclick="openTab(event, 'teaching')">Teaching</button>
+    <button class="tab-btn active" onclick="openTab(event, 'home')">Home</button>
+    <button class="tab-btn" onclick="openTab(event, 'research')">Research</button>
+    <button class="tab-btn" onclick="openTab(event, 'teaching-service')">Teaching & Service</button>
   </nav>
 
   <main>
-    <!-- About Tab Content -->
-    <div id="about" class="tab-content active">
+    <!-- 1. HOME TAB -->
+    <div id="home" class="tab-content active">
       <p>
         I'm a fourth-year PhD student in Linguistics at University of Connecticut. I'm a theoretical linguist working on Syntax, Semantics, Morphology, and the way they interact, aiming at understanding the human language faculty through the lens of language structures and meaning. I also hold interests in the social and sociological meaning of languages.
       </p>
@@ -211,10 +191,7 @@
       <p>
         My academic CV can be found <a href="#">here</a>.  
       </p>
-    </div>
 
-    <!-- Presentations Tab Content -->
-    <div id="presentations" class="tab-content">
       <h2>Recent Talks & Posters</h2>
       <ul>
         <li>
@@ -223,42 +200,63 @@
       </ul>
     </div>
 
-    <!-- Publications Tab Content -->
-    <div id="publications" class="tab-content">
-      <h2>Publications & Papers</h2>
+    <!-- 2. RESEARCH TAB -->
+    <div id="research" class="tab-content">
+      <h2>Research Agenda</h2>
+      <p>
+        My core research centers on syntax, semantics, morphology, and their interfaces.
+      </p>
+
+      <h2>Publications & Manuscripts</h2>
       <ul>
         <li>
-          <span class="pub-title">Title of Your Recent Paper or Manuscript.</span> (2026)<br>
-          <span class="pub-meta">Journal / Proceedings / Dissertation. [<a href="#">PDF</a>] [<a href="#">Slides</a>]</span>
+          <span class="pub-title">[Paper / Article Title Placeholder]</span> (2026)<br>
+          <span class="pub-meta">Journal / Proceedings / Status placeholder. [<a href="#">PDF</a>] [<a href="#">Abstract</a>]</span>
+        </li>
+        <li>
+          <span class="pub-title">[Manuscript in Progress Title Placeholder]</span> (In Prep)<br>
+          <span class="pub-meta">Working paper / In preparation. [<a href="#">Draft on request</a>]</span>
         </li>
       </ul>
     </div>
 
-    <!-- Teaching Tab Content -->
-    <div id="teaching" class="tab-content">
+    <!-- 3. TEACHING & SERVICE TAB -->
+    <div id="teaching-service" class="tab-content">
       <h2>Teaching</h2>
       <ul>
-        <li><strong>LING 1001: Introduction to Linguistics</strong> — Teaching Assistant (Spring 2026)</li>
+        <li>
+          <strong>LING 1001: Introduction to Linguistics</strong> — Teaching Assistant, Department of Linguistics, University of Connecticut (Spring 2026)
+        </li>
+        <li>
+          <strong>[Course Title Placeholder]</strong> — Instructor / TA ([Term/Year Placeholder])
+        </li>
+      </ul>
+
+      <h2>Service & Community</h2>
+      <ul>
+        <li>
+          <strong>[Departmental Role / Committee Placeholder]</strong>, Department of Linguistics, UConn (2025 – Present)
+        </li>
+        <li>
+          <strong>[Conference / Workshop Organization Placeholder]</strong> (2026)
+        </li>
       </ul>
     </div>
   </main>
 
-  <!-- JavaScript Tab Switcher Logic -->
+  <!-- JavaScript Tab Switcher -->
   <script>
     function openTab(evt, tabName) {
-      // Hide all tab content
       const tabContents = document.getElementsByClassName("tab-content");
       for (let i = 0; i < tabContents.length; i++) {
         tabContents[i].classList.remove("active");
       }
 
-      // Remove active class from all tab buttons
       const tabBtns = document.getElementsByClassName("tab-btn");
       for (let i = 0; i < tabBtns.length; i++) {
         tabBtns[i].classList.remove("active");
       }
 
-      // Show current tab and set button active
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
     }
