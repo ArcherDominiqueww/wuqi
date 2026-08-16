@@ -57,25 +57,13 @@
       letter-spacing: -0.02em;
     }
     
-    /* H2 adjusted to match tab font size (1.05rem) */
+    /* H2 without yellow accent line */
     h2 { 
       font-size: 1.05rem; 
       margin-top: 2rem; 
       border-bottom: 2px solid var(--color-border); 
       padding-bottom: 0.3rem; 
       letter-spacing: 0.02em;
-      text-transform: uppercase;
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background-color: var(--yellow-line);
     }
 
     p { margin: 1em 0; }
@@ -117,6 +105,8 @@
       padding: 0.4rem 0.2rem;
       position: relative;
       transition: color 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .tab-btn:hover {
@@ -237,10 +227,16 @@
       <h2>Service & Community</h2>
       <ul>
         <li>
-          <strong>[Departmental Role / Committee Placeholder]</strong>, Department of Linguistics, UConn (2025 – Present)
+          <strong>Graduate Student Representative</strong> (with <a href="https://linguistics.uconn.edu/person/wiliam-rimer/">Will Rimer</a>), UConn Linguistics Club, 2026-2027
         </li>
         <li>
-          <strong>[Conference / Workshop Organization Placeholder]</strong> (2026)
+          <strong>Vice President</strong>, UConn Linguistics Club, 2026-2027
+        </li>
+        <li>
+          <strong>Linguistics Latex workshop</strong> (with <a href="https://sites.google.com/view/yusukeyagi/home">Yusuke Yagi</a>), February 25, 2025
+        </li>
+        <li>
+          <strong>Colloquium Co-Chair</strong> (with <a href="https://linguistics.uconn.edu/person/aaron-sanchez/">Aaròn Sánchez</a>), UConn Linguistics Club, 2024-2025
         </li>
       </ul>
     </div>
